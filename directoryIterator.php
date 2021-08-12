@@ -22,14 +22,15 @@
                     $files[] = clone $file;
                     
                }
-            } ?>
-<img src="all-files/images/<?php
+            } ?> </p>
 
-echo $files[1]->getFilename();
-
-?>" alt="">
+            <p class="footer">
+            <img 
+            src="all-files/images/<?php echo $files[1]->getFilename(); ?>" 
+            alt="nature">
+            </p>
             
-          </p>
+          
         
       </div>
     
