@@ -18,6 +18,9 @@
 
           </h1>
           <a href="directoryIterator.php">Directory Iterator</a>
+          <p>
+          <a href="documentFile.php">Document Iterator</a>
+          </p>
         
       </div>
     
