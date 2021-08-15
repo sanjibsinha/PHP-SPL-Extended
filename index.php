@@ -21,6 +21,9 @@
           <p>
           <a href="documentFile.php">Document Iterator</a>
           </p>
+          <p>
+          <a href="chainIterator.php">Chaining Iterator</a>
+          </p>
         
       </div>
     
