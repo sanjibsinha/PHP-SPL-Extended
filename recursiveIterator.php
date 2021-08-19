@@ -117,7 +117,7 @@
       </div>
 
       <h2>
-        Recursive Iterator Iterates setting maximum depth    
+        Recursive Iterator dispalys directories, not elements  
       </h2> 
       <div class="container">
         <code>
@@ -126,9 +126,11 @@
         $files = new RecursiveDirectoryIterator('all-files');
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
+        
         $files = new RecursiveIteratorIterator($files, 
         RecursiveIteratorIterator::SELF_FIRST);
-        $files->setMaxDepth(2);
+        $files->setMaxDepth(1);
+
         foreach ($files as $value) {
             # code...
             echo $value . "</br>";
