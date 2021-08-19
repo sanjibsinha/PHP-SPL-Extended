@@ -141,7 +141,7 @@
       </div>
 
       <h2>
-        Recursive Iterator  
+        Recursive Iterator with setting maximum depth to a sub-directory
       </h2> 
       <div class="container">
         <code>
@@ -149,7 +149,7 @@
 
         $depth = 1;
         $files = new RecursiveDirectoryIterator('all-files/images'); 
-              
+        $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);      
         $files = new RecursiveIteratorIterator($files);
         $files->setMaxDepth($depth);
         foreach ($files as $value) {
@@ -163,25 +163,61 @@
         </code>
       </div>
 
-<!-- 
-    ss@ss-desktop:/var/www/html/PHP-SPL-Extended/all-files/images$ ls -la
-total 140
-drwxrwxr-x 2 ss ss  4096 Aug 12 08:05 .
-drwxrwxr-x 5 ss ss  4096 Aug 19 06:56 ..
--rw-rw-r-- 1 ss ss 32358 Aug 12 08:05 nature1.jpg
--rw-rw-r-- 1 ss ss 38351 Aug 12 08:05 nature2.jpg
--rw-rw-r-- 1 ss ss 59088 Aug 12 08:05 nature3.jpg
+      <h2>
+        Recursive Iterator with setting maximum depth to 1
+      </h2> 
+      <div class="container">
+        <code>
+        <?php
 
+        $depth = 1;
+        $files = new RecursiveDirectoryIterator('all-files'); 
+        $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS); 
+        $files = new RecursiveIteratorIterator($files, 
+        RecursiveIteratorIterator::SELF_FIRST); 
+        $files->setMaxDepth($depth);
+        foreach ($files as $value) {
+            # code...
+            echo $value . "</br>";
+        }
+        
+        echo "Counting Elements in images, including DOT files = " . iterator_count($files);
+
+        ?>
+        </code>
+      </div>
+
+      <h2>
+        Recursive Iterator with setting maximum depth to 2
+      </h2> 
+      <div class="container">
+        <code>
+        <?php
+
+        $depth = 2;
+        $files = new RecursiveDirectoryIterator('all-files'); 
+        $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS); 
+        $files = new RecursiveIteratorIterator($files, 
+        RecursiveIteratorIterator::SELF_FIRST); 
+        $files->setMaxDepth($depth);
+        foreach ($files as $value) {
+            # code...
+            echo $value . "</br>";
+        }
+        
+        echo "Counting Elements in images, including DOT files = " . iterator_count($files);
+
+        ?>
+        </code>
+      </div>
+
+<!-- 
     Conclusion:
     As long as directory iteration is concerned, FileSystemIterator is always a
     better option than DirectoryIterator
  -->
-
-
       <p class="footer">
           <a href="index.php">HOME</a>
           </p>
-    
-      
-  </body>
+    </body>
 </html>
