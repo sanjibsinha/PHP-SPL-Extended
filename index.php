@@ -24,6 +24,12 @@
           <p>
           <a href="chainIterator.php">Chaining Iterator</a>
           </p>
+          <p>
+          <a href="fileSystemIterator.php">Single Directory Iterator</a>
+          </p>
+          <p>
+          <a href="recursiveIterator.php">Recursive Iterator</a>
+          </p>
         
       </div>
     
