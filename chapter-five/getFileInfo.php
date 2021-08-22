@@ -16,11 +16,21 @@
             <?php echo "Hello PHP SPL Class"; ?>
           </h1> 
           <h2>
-              
+              File Info
           </h2>       
       </div>
       <div class="container">
         <code>
+            <?php
+            
+            $files = new FilesystemIterator('../all-files/images', 
+            FilesystemIterator::UNIX_PATHS);
+            foreach ($files as $value) {
+                # code...
+                echo $value->getFilename()  . '</br>';
+            }
+            
+            ?>
           
         </code>
       </div>

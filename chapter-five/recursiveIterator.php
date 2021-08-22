@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Bootstrap core CSS -->
-<link href="style.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -23,7 +23,8 @@
         <code>
             <?php
 
-            $files = new RecursiveDirectoryIterator('all-files');
+            $files = new RecursiveDirectoryIterator('../all-files',
+          RecursiveDirectoryIterator::UNIX_PATHS);
             foreach ($files as $key => $value) {
                 # code...
                 echo $key . " >> " . $value . "</br>";
@@ -43,7 +44,7 @@
         <code>
         <?php
 
-        $files = new RecursiveDirectoryIterator('all-files');
+        $files = new RecursiveDirectoryIterator('../all-files');
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
         foreach ($files as $key => $value) {
@@ -62,7 +63,7 @@
         <code>
         <?php
 
-        $files = new RecursiveDirectoryIterator('all-files');
+        $files = new RecursiveDirectoryIterator('../all-files');
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
         $files = new RecursiveIteratorIterator($files);
@@ -81,8 +82,8 @@
       <div class="container">
         <code>
         <?php
-
-        $files = new RecursiveDirectoryIterator('all-files');
+        
+        $files = new RecursiveDirectoryIterator('../all-files'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
         $files = new RecursiveIteratorIterator($files, 
@@ -101,8 +102,8 @@
       <div class="container">
         <code>
         <?php
-
-        $files = new RecursiveDirectoryIterator('all-files');
+        
+        $files = new RecursiveDirectoryIterator('../all-files'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
         $files = new RecursiveIteratorIterator($files, 
@@ -122,8 +123,8 @@
       <div class="container">
         <code>
         <?php
-
-        $files = new RecursiveDirectoryIterator('all-files');
+        
+        $files = new RecursiveDirectoryIterator('../all-files'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS | 
         RecursiveDirectoryIterator::UNIX_PATHS);
         
@@ -148,7 +149,7 @@
         <?php
 
         $depth = 1;
-        $files = new RecursiveDirectoryIterator('all-files/images'); 
+        $files = new RecursiveDirectoryIterator('../all-files/images'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);      
         $files = new RecursiveIteratorIterator($files);
         $files->setMaxDepth($depth);
@@ -171,7 +172,7 @@
         <?php
 
         $depth = 1;
-        $files = new RecursiveDirectoryIterator('all-files'); 
+        $files = new RecursiveDirectoryIterator('../all-files'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS); 
         $files = new RecursiveIteratorIterator($files, 
         RecursiveIteratorIterator::SELF_FIRST); 
@@ -195,7 +196,7 @@
         <?php
 
         $depth = 2;
-        $files = new RecursiveDirectoryIterator('all-files'); 
+        $files = new RecursiveDirectoryIterator('../all-files'); 
         $files->setFlags(RecursiveDirectoryIterator::SKIP_DOTS); 
         $files = new RecursiveIteratorIterator($files, 
         RecursiveIteratorIterator::SELF_FIRST); 
@@ -217,7 +218,7 @@
     better option than DirectoryIterator
  -->
       <p class="footer">
-          <a href="index.php">HOME</a>
+          <a href="../index.php">HOME</a>
           </p>
     </body>
 </html>

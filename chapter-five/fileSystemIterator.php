@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <!-- Bootstrap core CSS -->
-<link href="style.css" rel="stylesheet">
+<link href="../style.css" rel="stylesheet">
 
   </head>
   <body>
@@ -27,7 +27,7 @@
       <div class="container">
         <code>
           <?php
-          $file = new DirectoryIterator('all-files/images');
+          $file = new DirectoryIterator('../all-files/images');
           foreach($file as $filePath){
               echo $filePath . "</br>";
           }
@@ -49,7 +49,7 @@
         <code>
           <?php
           /// relative path can also be used as key and value
-          $file = new FilesystemIterator('all-files/images');
+          $file = new FilesystemIterator('../all-files/images');
           foreach($file as $filePath){
               echo $filePath . "</br>";
           }
@@ -63,7 +63,7 @@
         <code>
           <?php
           /// relative path can also be used as key and value
-          $file = new FilesystemIterator('all-files/images');
+          $file = new FilesystemIterator('../all-files/images');
           foreach($file as $key=>$filePath){
               echo $key . " >> " . $filePath . "</br>";
           }
@@ -78,7 +78,7 @@
         <code>
           <?php
           /// relative path can also be used as key and value
-          $file = new FilesystemIterator('all-files/images');
+          $file = new FilesystemIterator('../all-files/images');
           $file->setFlags(FilesystemIterator::KEY_AS_FILENAME);
           foreach($file as $key=>$filePath){
               echo $key . " >> " . $filePath . "</br>";
@@ -93,7 +93,7 @@
         <code>
           <?php
           /// relative path can also be used as key and value
-          $file = new FilesystemIterator('all-files/images');
+          $file = new FilesystemIterator('../all-files/images');
           $file->setFlags(FilesystemIterator::KEY_AS_FILENAME);
           foreach($file as $key=>$filePath){
               //echo $key . " >> " . $filePath . "</br>";
@@ -115,7 +115,7 @@
 
 
       <p class="footer">
-          <a href="index.php">HOME</a>
+          <a href="../index.php">HOME</a>
           </p>
     
       
