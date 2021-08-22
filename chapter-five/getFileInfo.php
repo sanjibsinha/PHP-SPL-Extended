@@ -44,19 +44,47 @@
       
       -->
       <h2>
-              
+             If image file extension is png
       </h2> 
       <div class="container">
         <code>
-          
+        <?php
+            
+            $file = new FilesystemIterator('../all-files/images');
+            foreach ($file as $value) {
+                # code...
+                if ($value->isFile()) {
+                    if($value->getExtension() == 'png')
+                    echo $value->getFilename() . ' is of ' 
+                . $value->getSize() . ' bytes. The real path is: '
+                . $value->getRealPath() . '</br>';
+                }              
+                
+            }
+            
+            ?>  
         </code>
       </div>
       <h2>
-              
+      If image file extension is jpg
       </h2> 
       <div class="container">
         <code>
-          
+        <?php
+            
+            $file = new FilesystemIterator('../all-files/images');
+            foreach ($file as $value) {
+                # code...
+                if ($value->isFile()) {
+                    if($value->getExtension() == 'jpg')
+                    echo $value->getFilename() . ' is of ' 
+                . $value->getSize() . ' bytes. The real path is: '
+                . $value->getRealPath() . '</br>';
+                }              
+                
+            }
+            
+        ?>
         </code>
 
       </div>

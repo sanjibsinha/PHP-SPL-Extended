@@ -14,3 +14,17 @@
             }
             
             ?>
+</hr>
+</hr>
+<?php
+            
+            $file = new DirectoryIterator(__DIR__.'/all-files/images');
+            foreach ($file as $value) {
+                # code...
+                if ($value->isFile()) {
+                    echo $value->getExtension() . "</br>";
+                }              
+                
+            }
+            
+            ?>            
