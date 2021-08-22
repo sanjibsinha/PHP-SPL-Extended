@@ -27,7 +27,13 @@
             FilesystemIterator::UNIX_PATHS);
             foreach ($files as $value) {
                 # code...
-                echo $value->getFilename()  . '</br>';
+                // if ($value->geExtension() == 'jpg') {
+                    # code...
+                    echo $value->getFilename() . ' is of ' 
+                . $value->getSize() . ' bytes. The real path is: '
+                . $value->getRealPath() . '</br>';
+                // }
+                
             }
             
             ?>
