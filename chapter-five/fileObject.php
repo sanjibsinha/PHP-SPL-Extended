@@ -52,13 +52,14 @@ foreach ($documents as $singleDocumnet) {
         foreach ($textfile as $line) {
             echo "$line<br>";
         }
-        /* $textfile->seek(6);
+        $textfile->seek(6);
         echo '<br>';
-        echo 'This is the seventh line: ' . $textfile->current(); */
-        /* while(!$textfile->eof()) {
+        echo '<h1>' . 'This is the seventh line: ' . 
+        $textfile->current() . '</h1>';
+        while(!$textfile->eof()) {
             $textfile->next();
         }
-        $textfile->fwrite("\r\n\r\nWe're going to add a new line...at the end."); */
+        $textfile->fwrite("\r\n\r\nWe're going to add a new line...at the end.");
     }
 }
 ?>
