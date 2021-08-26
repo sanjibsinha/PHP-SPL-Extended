@@ -54,12 +54,12 @@ foreach ($documents as $singleDocumnet) {
         }
         $textfile->seek(6);
         echo '<br>';
-        echo '<h1>' . 'This is the seventh line: ' . 
-        $textfile->current() . '</h1>';
+        echo '<h1>' . 'This is the seventh line: ' 
+        . $textfile->current() . '</h1>';
         while(!$textfile->eof()) {
             $textfile->next();
         }
-        $textfile->fwrite("\r\n\r\nWe're going to add a new line...at the end.");
+        // $textfile->fwrite("\r\n\r\nWe're going to add a new line...at the end.");
     }
 }
 ?>
@@ -73,7 +73,23 @@ foreach ($documents as $singleDocumnet) {
       <div class="container">
         <code>
 
-        
+        <?php
+
+// create a SplFileObject for reading - note that there are no flags
+$file = new SplFileObject('../all-files/documents', 'r');
+
+// iterate over its contents
+while (!$file->eof()) {
+    // get the current line
+    $line  =  $file->fgets();
+
+    // trim it, and then check if its empty
+    if (empty(trim($line))) {
+        // skips the current iteration
+        continue;
+    }
+}
+?>
           
         </code>
 
